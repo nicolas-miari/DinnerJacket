@@ -1,0 +1,16 @@
+//
+//  Flat.fragsh
+//  DinnerJacket
+//
+//  Created by Nicolás Miari on 2014-05-03.
+//  Copyright © 2016 Nicolás Miari. All rights reserved.
+//
+
+
+varying lowp    vec4 DestinationColor;
+
+
+void main (void) {
+
+    gl_FragColor = DestinationColor;
+}

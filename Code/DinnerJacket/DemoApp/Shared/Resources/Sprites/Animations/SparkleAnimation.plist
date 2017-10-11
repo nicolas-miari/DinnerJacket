@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AtlasName</key>
+	<string>Sprites01</string>
+	<key>Frames</key>
+	<array>
+		<dict>
+			<key>SubimageName</key>
+			<string>Sparkle_00</string>
+			<key>Duration</key>
+			<real>0.1</real>
+		</dict>
+		<dict>
+			<key>SubimageName</key>
+			<string>Sparkle_01</string>
+			<key>Duration</key>
+			<real>0.1</real>
+		</dict>
+		<dict>
+			<key>SubimageName</key>
+			<string>Sparkle_02</string>
+			<key>Duration</key>
+			<real>0.1</real>
+		</dict>
+		<dict>
+			<key>SubimageName</key>
+			<string>Sparkle_03</string>
+			<key>Duration</key>
+			<real>0.1</real>
+		</dict>
+		<dict>
+			<key>SubimageName</key>
+			<string>Sparkle_04</string>
+			<key>Duration</key>
+			<real>0.1</real>
+		</dict>
+		<dict>
+			<key>SubimageName</key>
+			<string>Sparkle_05</string>
+			<key>Duration</key>
+			<real>0.1</real>
+		</dict>
+		<dict>
+			<key>SubimageName</key>
+			<string>Sparkle_06</string>
+			<key>Duration</key>
+			<real>0.1</real>
+		</dict>
+	</array>
+	<key>RepeatCount</key>
+	<integer>5</integer>
+</dict>
+</plist>

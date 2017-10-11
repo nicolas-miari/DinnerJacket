@@ -1,0 +1,23 @@
+//
+//  Sprite.fragsh
+//  DinnerJacket
+//
+//  Created by Nicolás Miari on 2014-05-03.
+//  Copyright © 2016 Nicolás Miari. All rights reserved.
+//
+
+#ifdef GL_ES
+precision highp float;
+#endif
+
+in lowp    vec4      DestinationColor;
+in mediump vec2      TextureCoordOut;
+
+uniform sampler2D    Sampler;
+
+out vec4 fragmentColor;
+
+void main (void) {
+
+    fragmentColor = texture(Sampler, TextureCoordOut) * DestinationColor;
+}

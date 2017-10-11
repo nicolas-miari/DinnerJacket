@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ImageName</key>
+	<string>TestAtlas</string>
+	<key>Database</key>
+	<dict>
+		<key>TestSprite_00</key>
+		<dict>
+			<key>Rectangle</key>
+			<string>{{0,0},{32,64}}</string>
+			<key>Opaque</key>
+			<true/>
+		</dict>
+		<key>TestSprite_01</key>
+		<dict>
+			<key>Rectangle</key>
+			<string>{{55,15},{32,64}}</string>
+			<key>Opaque</key>
+			<true/>
+		</dict>
+		<key>TestSprite_02</key>
+		<dict>
+			<key>Rectangle</key>
+			<string>{{55,85},{21,21}}</string>
+			<key>Opaque</key>
+			<true/>
+		</dict>
+		<key>Animation_Frame_00</key>
+		<dict>
+			<key>Rectangle</key>
+			<string>{{55,85},{21,21}}</string>
+			<key>Opaque</key>
+			<false/>
+		</dict>
+	</dict>
+</dict>
+</plist>

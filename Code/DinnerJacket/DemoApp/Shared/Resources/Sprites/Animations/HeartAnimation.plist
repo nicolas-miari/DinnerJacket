@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AtlasName</key>
+	<string>Sprites01</string>
+	<key>Frames</key>
+	<array>
+		<dict>
+			<key>SubimageName</key>
+			<string>Heart_00</string>
+			<key>Duration</key>
+			<real>0.125</real>
+		</dict>
+		<dict>
+			<key>SubimageName</key>
+			<string>Heart_01</string>
+			<key>Duration</key>
+			<real>0.125</real>
+		</dict>
+		<dict>
+			<key>SubimageName</key>
+			<string>Heart_02</string>
+			<key>Duration</key>
+			<real>0.125</real>
+		</dict>
+		<dict>
+			<key>SubimageName</key>
+			<string>Heart_03</string>
+			<key>Duration</key>
+			<real>0.125</real>
+		</dict>
+		<dict>
+			<key>SubimageName</key>
+			<string>Heart_04</string>
+			<key>Duration</key>
+			<real>0.125</real>
+		</dict>
+		<dict>
+			<key>SubimageName</key>
+			<string>Heart_05</string>
+			<key>Duration</key>
+			<real>0.125</real>
+		</dict>
+	</array>
+	<key>RepeatCount</key>
+	<integer>-1</integer>
+</dict>
+</plist>
