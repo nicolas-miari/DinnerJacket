@@ -1,0 +1,76 @@
+================================================================================
+Memo: Multiple Resolution Support for Tilemap-Based Game
+================================================================================
+
+Ideally, the same map area should be visible at any single moment, on any 
+device. That is, regardless of resolution, every screen should measure the same 
+ammount of map tiles. This is so that the game is fair and equally dificult 
+between people playing on different devices.
+
+Scaling/resampling of resources is undesirable quality-wise, even in this age of 
+high-desnsity displays where individual pixels can' be discerned. Instead, we 
+preserve pixel-perfect graphics by redefining the tile size for each device (and 
+supplying a different set of resources to back up each):
+
+
+1. iPhone 3.5"/4": (320 pt wide) -> Tile size: 32 pt 
+			(exactly 10 tiles wide)
+
+2. iPhone 4.7": (375 pt wide) -> Tile size: 36 pt(*)
+            (10.41+ tiles wide)
+			
+3. iPhone 5.5" (414 pt wide) -> Tile size: 40 pt
+            (10.35 tiles wide)
+			
+4. iPad  (any) (768 pt wide) -> Tile Size: 76 pt
+            (10.10+ tiles wide)
+
+
+(*) Chose 36 instead of 37 because is a rounder number
+
+
+There is the option of supplying only the highest resolution resource set (tile 
+size: 76pt). But the lowest resolution is exactly half the size, and runtime 
+downsampling of this scale produces visible artifacts (linear filtering in 
+OpenGL ES). 
+
+--------------------------------------------------------------------------------
+
+IF having 4x the resources is unacceptable (both in terms of binary size and 
+authoring time), we can compromise with:
+
+1. An iPhone-specific resource set, created at the largest tile size: 40 pt 
+(5.5"), and scale it down on other devices: 90% for 36pt devices (4.7") and 80% 
+for 32 pt devices (3.5" and 4").
+
+On startup, read the screen width, find out which tile size fits roughly 10 
+times in it, and set an app-wide 'scaling factor' (1.0f, 0.9f, or 0.8f) to apply
+to every rendered object. Design game logic as if screen is 414 pt wide
+
+2. An iPad-specific resource set, scaled for tile size: 76pt.
+
+
+--------------------------------------------------------------------------------
+EDIT:
+
+Actually for the 5.5" iPhone, the 414 pt @3x translate to 1242 px, but are 
+tipically downsampled in a UIKit app to 1080 px (the native display resokution). 
+So, if we render directly to the native resolution using OpenGL ES (to skip the 
+downsampling and the implied fill-rate performance hit), we can instead treat it 
+as an idealized screen that is 360 pt wide (which yields 1080px when rendered 
+@3x), and use the same tile size in points (36) as the iPhone 4.7", to give 
+(roughly) 10 tiles along the screen width.
+We still need to bundle two sets of resources: @2x (4" and 4.7") and @3x (5.5"),
+but only the 4" iPhone needs to scale the node hierarchy by anything other than 
+100%:
+
+1. iPhone 4"  : Render @2x resources (36pt tile size) at  89% (*)
+(gives roughly 32pt tile size, 10 tiles wide for a 320pt-wide screen).
+
+2. iPhone 4.7": Render @2x resources (36pt tile size) at 100%.
+
+3. iPhone 5.5": Render @3x resources (36pt tile size) at 100%.
+
+* It is impossible to get exactly 32pt with a round-number percentage,
+ but in any case the 4" iPhone is the oldest (and lowest priority) device.
+

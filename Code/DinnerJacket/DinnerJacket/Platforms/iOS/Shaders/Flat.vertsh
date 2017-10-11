@@ -1,0 +1,29 @@
+//
+//  Flat.vertsh
+//  DinnerJacket
+//
+//  Created by Nicolás Miari on 2014-05-03.
+//  Copyright © 2016 Nicolás Miari. All rights reserved.
+//
+
+attribute vec2  Position;
+
+uniform   mat4  Projection;
+uniform   mat4  Modelview;
+uniform   vec4  Color;
+
+uniform   float Z;
+
+varying   vec4  DestinationColor;
+
+
+
+void main (void) {
+
+    // 0. Calculate final position from modelview and projection:
+	gl_Position = Projection * Modelview * vec4(Position, Z, 1.0);
+    
+    
+    // 1. Pass color along:
+	DestinationColor = Color;
+}

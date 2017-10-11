@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ImageName</key>
+	<string>Sprites01</string>
+	<key>SpriteName</key>
+	<string>BlueBalloon</string>
+	<key>Frames</key>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>Head</string>
+			<key>X</key>
+			<integer>176</integer>
+			<key>Y</key>
+			<integer>416</integer>
+			<key>Width</key>
+			<integer>68</integer>
+			<key>Height</key>
+			<integer>72</integer>
+			<key>AnchorX</key>
+			<integer>0</integer>
+			<key>AnchorY</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Tail1</string>
+			<key>X</key>
+			<integer>244</integer>
+			<key>Y</key>
+			<integer>416</integer>
+			<key>Width</key>
+			<integer>22</integer>
+			<key>Height</key>
+			<integer>82</integer>
+			<key>AnchorX</key>
+			<integer>0</integer>
+			<key>AnchorY</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Tail2</string>
+			<key>X</key>
+			<integer>266</integer>
+			<key>Y</key>
+			<integer>416</integer>
+			<key>Width</key>
+			<integer>22</integer>
+			<key>Height</key>
+			<integer>82</integer>
+			<key>AnchorX</key>
+			<integer>0</integer>
+			<key>AnchorY</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+</dict>
+</plist>

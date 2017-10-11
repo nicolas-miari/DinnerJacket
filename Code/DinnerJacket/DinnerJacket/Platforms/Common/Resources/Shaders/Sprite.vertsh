@@ -1,0 +1,33 @@
+//
+//  Sprite.vertsh
+//  DinnerJacket
+//
+//  Created by Nicolás Miari on 2014-05-03.
+//  Copyright © 2016 Nicolás Miari. All rights reserved.
+//
+
+#ifdef GL_ES
+precision highp float;
+#endif
+
+in vec2  Position;
+in vec2  TextureCoord;
+
+uniform   mat4  Projection;
+uniform   mat4  Modelview;
+uniform   vec4  Color;
+uniform   float Z;
+
+out   vec4  DestinationColor;
+out   vec2  TextureCoordOut;
+
+
+
+void main (void) {
+
+	gl_Position = Projection * (Modelview) * vec4(Position, Z, 1);
+	
+	DestinationColor = Color;
+	
+	TextureCoordOut = TextureCoord;
+}
