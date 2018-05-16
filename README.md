@@ -2,6 +2,8 @@
 
 OpenGL-based, ad hoc sprite library for my personal projects.
 
+[![Build Status](https://travis-ci.com/nicolas-miari/DinnerJacket.svg?branch=master)](https://travis-ci.com/nicolas-miari/DinnerJacket)
+
 #### Some features include:
 - Rendering solid and textured sprites in a tree hierarchy of nodes.
 - Flipbook-style animation of sprites.
@@ -14,7 +16,7 @@ rendering of available resources.
 
 ### Project Status
 The project is currently **abandoned**. This repository is made public for demonstration
-purposes and for reference.
+purposes and for reference. I am using it as a test bed for development tools such as Travis CI, etc.
 
 ### Related Projects
 I am now working on a fully redesigned sprite library
