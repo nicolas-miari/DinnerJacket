@@ -1,4 +1,4 @@
-os: osx
 language: objective-c
-xcode_workspace: ./Code/DinnerJacket.xcworkspace
-xcode_scheme: DinnerJacket
+script: xcodebuild -workspace DinnerJacket.xcworkspace -scheme DinnerJacket -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+#xcode_workspace: ./Code/DinnerJacket.xcworkspace
+#xcode_scheme: DinnerJacket
