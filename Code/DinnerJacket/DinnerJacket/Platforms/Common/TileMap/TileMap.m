@@ -42,7 +42,7 @@ static NSString* const  kTileMapBaseDirectoryPathKey =    @"BaseDirectory";
 @property (nonatomic, readwrite, weak) id <TileMapDataSource> dataSource;
 @property (nonatomic, readwrite) NSString* baseDirectoryPath;
 @property (nonatomic, readwrite) NSDictionary* sourceDictionary;
-@property (nonatomic, readwrite) NSMutableDictionary* TilesetsByName;
+@property (nonatomic, readwrite) NSMutableDictionary* tilesetsByName;
 @property (nonatomic, readwrite) NSMutableDictionary* mapLayersByName;
 @property (nonatomic, readwrite) NSMutableArray* mapLayersInStackingOrder; // bottom to top
 @property (nonatomic, readwrite) CGFloat xMin;
@@ -127,9 +127,9 @@ static NSString* const  kTileMapBaseDirectoryPathKey =    @"BaseDirectory";
         
         // [ 1 ] Load all tilesets
 
-       _TilesetsByName = [NSMutableDictionary new];
+       self.tilesetsByName = [NSMutableDictionary new];
        
-        NSDictionary* tilesetDictionariesByName = _sourceDictionary[kTileMapTilesetsKey];
+        NSDictionary* tilesetDictionariesByName = self.sourceDictionary[kTileMapTilesetsKey];
         
         for (NSString* tilesetName in [tilesetDictionariesByName allKeys]){
             
@@ -138,29 +138,29 @@ static NSString* const  kTileMapBaseDirectoryPathKey =    @"BaseDirectory";
             
             Tileset* tileset = [[Tileset alloc] initWithImageNamed:tilesetName
                                                        inDirectory:nil
-                                                          tileSize:_tileSize
+                                                          tileSize: self.tileSize
                                                            palette:paletteArray];
             
-            _TilesetsByName[tilesetName] = tileset;
+            self.tilesetsByName[tilesetName] = tileset;
         }
                                                    
        
        
        // [ 2 ] Create map layers (minus VAO):
        
-       _mapLayersByName  = [NSMutableDictionary new];
-       _mapLayersInStackingOrder = [NSMutableArray new];
+        self->_mapLayersByName  = [NSMutableDictionary new];
+        self->_mapLayersInStackingOrder = [NSMutableArray new];
        
-       for (NSDictionary* layerDictionary in _sourceDictionary[kTileMapLayersKey]) {
+        for (NSDictionary* layerDictionary in self->_sourceDictionary[kTileMapLayersKey]) {
            
            TileMapLayer* layer = [[TileMapLayer alloc] initWithContentsOfDictionary:layerDictionary
                                                                     forUseInTileMap:self];
            
-           [_mapLayersInStackingOrder addObject:layer];
+           [self->_mapLayersInStackingOrder addObject:layer];
            
            NSString* layerName = [layer localizedName];
            
-           [_mapLayersByName setObject:layer forKey:layerName];
+           [self->_mapLayersByName setObject:layer forKey:layerName];
        }
        
        
@@ -175,7 +175,7 @@ static NSString* const  kTileMapBaseDirectoryPathKey =    @"BaseDirectory";
            // (background context) if they are going to be used on the main
            // thread (main context).
            
-           for (TileMapLayer* layer in _mapLayersInStackingOrder) {
+           for (TileMapLayer* layer in self->_mapLayersInStackingOrder) {
                
                if ([layer isSymbolic] == NO){
                    [layer createVertexArrayObject];
@@ -203,7 +203,7 @@ static NSString* const  kTileMapBaseDirectoryPathKey =    @"BaseDirectory";
         return nil;
     }
     
-    return [_TilesetsByName objectForKey:tilesetName];
+    return [_tilesetsByName objectForKey:tilesetName];
 }
 
 

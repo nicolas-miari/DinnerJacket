@@ -737,7 +737,7 @@ NSString* DNRTextureAtlasImageFilePath( NSDictionary* dictionary ) {
             
             
             // Store the entry into the dictionary (database)
-            [_vaoDatabase setObject:entry forKey:key];
+            [self.vaoDatabase setObject:entry forKey:key];
             
         };
         

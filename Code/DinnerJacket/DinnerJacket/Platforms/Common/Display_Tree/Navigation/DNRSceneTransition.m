@@ -79,8 +79,6 @@
          */
         [self addChild:_scene1];
         [self addChild:_scene2];
-        
-        int a = testVariable;
 
         switch (_easingType) {
             default:

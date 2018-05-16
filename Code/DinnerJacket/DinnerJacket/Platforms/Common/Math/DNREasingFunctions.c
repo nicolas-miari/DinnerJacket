@@ -7,10 +7,7 @@
 //
 
 #include "DNREasingFunctions.h"
-
 #include <math.h>
-
-float const testVariable = 1;
 
 /* 
  Modeled after the line y = x
