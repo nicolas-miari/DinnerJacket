@@ -1,0 +1,4 @@
+os: osx
+language: objective-c
+xcode_workspace: ./Code/DinnerJacket.xcworkspace
+xcode_scheme: DinnerJacket
