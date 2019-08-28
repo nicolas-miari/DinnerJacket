@@ -1,0 +1,1 @@
+xcodebuild -workspace DinnerJacket.xcodeworkspace -scheme DinnerJacket -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO

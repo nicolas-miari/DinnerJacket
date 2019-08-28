@@ -26,3 +26,8 @@ and game editor based around the new Metal API, coded entirely in Swift.
 ### Screenshots
 <img src="./Img/DemoApp_macOS@2x.png" width="748pt" height="566pt">
 <img src="./Img/DemoApp_iOS@2x.png" width="748pt" height="412pt">
+
+### Video Demo
+[![Capture Video](https://img.youtube.com/vi/Cb_WVMjv474/0.jpg)](https://www.youtube.com/watch?v=Cb_WVMjv474)
+
+(_click the image above to view on YouTube_)
